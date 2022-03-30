@@ -1,4 +1,5 @@
 {
+  "homepage": "https://jomujiben.github.io/angular-storybook",
   "name": "angular-storybook",
   "version": "0.0.0",
   "scripts": {
@@ -9,7 +10,9 @@
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
     "storybook": "npm run docs:json && start-storybook -p 6006",
-    "build-storybook": "npm run docs:json && build-storybook"
+    "predeploy": "npm run build-storybook",    
+    "deploy-storybook": "gh-pages -d storybook-static",    
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -42,6 +45,7 @@
     "@types/jasmine": "~3.10.0",
     "@types/node": "^12.11.1",
     "babel-loader": "^8.2.4",
+    "gh-pages": "^3.2.3",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
